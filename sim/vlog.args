@@ -1,0 +1,38 @@
++libext+.v
++acc
+
++define+DUMP_FSDB
+
+-y ../../rtl
+-work work
+
+//
+// Testbench files
+//
++incdir+../wb_bfm
+../wb_sdram_ctrl/bench/wb_sdram_ctrl_tb.v
+
+// RTL files
+//
++incdir+../wb_common
+
+../wb_sdram_ctrl/rtl/verilog/bufram.v
+../wb_sdram_ctrl/rtl/verilog/dpram_ecp5.v
+../wb_sdram_ctrl/rtl/verilog/dual_clock_fifo.v
+../wb_sdram_ctrl/rtl/verilog/wb_port.v
+../wb_sdram_ctrl/rtl/verilog/wb_sdram_ctrl.v
+../wb_sdram_ctrl/rtl/verilog/dpram_altera.v
+../wb_sdram_ctrl/rtl/verilog/dpram_generic.v
+../wb_sdram_ctrl/rtl/verilog/sdram_ctrl.v
+../wb_sdram_ctrl/rtl/verilog/wb_port_arbiter.v
+
+../mt48lc16m16a2/mt48lc16m16a2.v
+
+../vlog_tb_utils/vlog_functions.v
+../vlog_tb_utils/vlog_tap_generator.v
+../vlog_tb_utils/vlog_tb_utils.v
+
+../wb_bfm/wb_bfm_master.v
+../wb_bfm/wb_bfm_memory.v
+../wb_bfm/wb_bfm_slave.v
+../wb_bfm/wb_bfm_transactor.v

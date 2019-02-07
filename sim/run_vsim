@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ -e work ]
+then
+	\rm -rf work
+fi
+
+#verdi env setting
+export PLATFORM=LINUX64
+export NOVAS_INST_DIR=/opt/synopsys/Verdi3_L-2016.06-1
+export LD_LIBRARY_PATH=$NOVAS_INST_DIR/share/PLI/lib/$PLATFORM:$LD_LIBRARY_PATH
+
+vlib work
+vmap work work
+vlog +nowarnBSOB +nowarnRDGN -sv12compat -f ./vlog.args
+
+vsim -pli $NOVAS_INST_DIR/share/PLI/MODELSIM/$PLATFORM/novas_fli.so  work.wb_sdram_ctrl_tb -c -do sim.do
